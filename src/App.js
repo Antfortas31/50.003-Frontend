@@ -10,6 +10,7 @@ import styled from 'styled-components';
 import {OutTable, ExcelRenderer} from 'react-excel-renderer';
 import * as algo from './algorithm';
 import DisplayBox from './DisplayBox';
+import Modal from "./Modal";
 
 // uuid is for generating id's
 import * as uuid from 'uuid';
@@ -27,6 +28,10 @@ class App extends React.Component {
       cols: null,
       testbooth1 : [],
       testbooth2 : [],
+      show: false,
+      header: "Block1",
+      footer: "",
+      desc: "Booth1(project_name,tyoe,width,length,ID)"
     }
     this.fileHandler = this.fileHandler.bind(this);
     this.toggle = this.toggle.bind(this);
@@ -115,6 +120,13 @@ openFileBrowser = () => {
   this.fileInput.current.click();
 }
 
+showModal = () => {
+  this.setState({ show: true });
+};
+
+hideModal = () => {
+  this.setState({ show: false });
+};
 
   render() {
     return (
@@ -122,7 +134,7 @@ openFileBrowser = () => {
         <div className="App">
           <div className= "container">
             <Header/>
-            <Route exact path="/" render={props => (
+            <Route exact path="/50.003-FrontEnd" render={props => (
               <React.Fragment>
                 <img src={floorplan} 
                 className="Floorplan" 
@@ -148,7 +160,21 @@ openFileBrowser = () => {
 
 
             <Route path="/level2" component={Level2} />
-            <Route path="/tryme" component={tryme} />
+            <Route exact path="/tryme" render={props => (
+              <React.Fragment>
+                <div>
+                  <h1>React Modal</h1>
+                  <Modal show={this.state.show} handleClose={this.hideModal} header={this.state.header} footer={this.state.footer} desc={this.state.desc}>
+
+                  </Modal>
+
+                  <button type="button" onClick={this.showModal}>
+                    open
+                  </button>
+                </div>
+              </React.Fragment>
+
+            )} />
 
             
           </div>

@@ -5,7 +5,7 @@ function Header() {
     return (
         <header style ={headerStyle}>
             <h1>Capstone Allocation</h1>
-            <Link style={linkStyle} to="/"> Level 1</Link> | 
+            <Link style={linkStyle} to="../../50.003-FrontEnd"> Level 1</Link> | 
             <Link style={linkStyle} to="/level2"> Level 2</Link> | 
             <Link style={linkStyle} to="/tryme"> Test</Link> |
 
