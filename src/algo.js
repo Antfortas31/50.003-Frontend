@@ -1,4 +1,6 @@
-export class Block {
+//copy of algorithm.js for testing.
+
+class Block {
     constructor(priority="", length="", width="", boothList=[]){
         this.priority = priority;
         this.length = length;
@@ -8,7 +10,7 @@ export class Block {
     }
 }
 
-export class Booth{
+class Booth{
     constructor(boothID='', projectName='', boothType='', length = 1, width=1){
         this.boothID = boothID;
         this.projectName = projectName;
@@ -18,7 +20,7 @@ export class Booth{
     }
 }
 
-export var boothTypes = {
+var boothTypes = {
     aerospace: 'aerospace',
     transport: 'transport',
     computer: 'computer',
@@ -26,7 +28,7 @@ export var boothTypes = {
 }
 
 
-export function runAlgo(blockList, boothList, boothListCopy){
+function runAlgo(blockList, boothList, boothListCopy){
     
     var returnValue;
     if(blockList.length==0|boothList.length==0|boothListCopy==0){
@@ -44,7 +46,7 @@ export function runAlgo(blockList, boothList, boothListCopy){
     //console.log('check all occupied after');
 }
 
-export function checkBlockOccupied(block,boothlist,boothlistcopy){
+function checkBlockOccupied(block,boothlist,boothlistcopy){
     
     if(boothlist.length==0){
         //console.log('all booths allocated successfully');
@@ -69,7 +71,7 @@ export function checkBlockOccupied(block,boothlist,boothlistcopy){
     return 'block check finished';
 }
 
-export function checkAllOcuppied(boothlist,boothlistcopy,blocklist){
+function checkAllOcuppied(boothlist,boothlistcopy,blocklist){
     
 
     if(boothlist.length==0){
@@ -112,7 +114,7 @@ export function checkAllOcuppied(boothlist,boothlistcopy,blocklist){
 }
 
 
-export function runBlock(block,boothList,boothListcopy){
+function runBlock(block,boothList,boothListcopy){
     if(typeof(block)!='object'||typeof(boothList)!='object'||typeof(boothListcopy)!='object'){
         return 'wrong input type';
     }
@@ -175,7 +177,7 @@ export function runBlock(block,boothList,boothListcopy){
 
 }
 
-export function runBlock2( block,  boothList, boothListcopy){
+function runBlock2( block,  boothList, boothListcopy){
     
     if(boothList.length==0|boothListcopy==0){
         //console.log('all booths allocated successfully');
@@ -229,5 +231,16 @@ export function runBlock2( block,  boothList, boothListcopy){
     
     return checkBlockOccupied(block,boothList,boothListcopy);
 
+}
+
+module.exports = {
+    runAlgo,
+    runBlock,
+    runBlock2,
+    checkAllOcuppied,
+    checkBlockOccupied,
+    Block,
+    Booth,
+    boothTypes
 }
 

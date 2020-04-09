@@ -1,17 +1,12 @@
 import React from 'react'
-import floorplan from './floorplan.png';
+import Campus2 from './Campus Center Level 2.png';
 
 function Level2() {
     
     return (
         <React.Fragment>
-            <h1>Level 2</h1>
             <div>
-                <p style = {alignleft}>
-                    This is the TodoList app v1.0.0.
-                    It is part of a React crash course
-                </p>
-                <img src={floorplan} style={pic} className="Floorplan" alt="floorplan"/>
+                <img src={Campus2} style={pic} className="Floorplan" alt="floorplan"/>
             </div>
         </React.Fragment>
     )
