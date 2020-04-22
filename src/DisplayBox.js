@@ -8,7 +8,7 @@ class DisplayBox extends Component{
         return(
             <div>
             <label htmlFor="text">
-                {value || " test "}
+                {value || " "}
             </label>
             </div>
         );

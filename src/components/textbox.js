@@ -52,13 +52,13 @@ export class ComplexText extends Component{
       y: this.props.y,
       text:
       this.props.text,
-      fontSize: 18,
+      fontSize: 16,
       fontFamily: 'Calibri',
       //fill: '#555',
       width: this.props.width,
       padding: 20,
-      align: 'center',
-      wrap: "word"
+      align: 'left',
+      wrap: "word",
     }
     //this.handleClick=this.handleClick.bind(this);
     //this.handleDragStart=this.handleDragStart.bind(this);

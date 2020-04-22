@@ -9,12 +9,13 @@ export class Block {
 }
 
 export class Booth{
-    constructor(boothID='', projectName='', boothType='', length = 1, width=1){
+    constructor(boothID='', projectName='', boothType='', length = 1, width=1,location =""){
         this.boothID = boothID;
         this.projectName = projectName;
         this.boothType = boothType;
         this.length = length;
         this.width = width;
+        this.location = location;
     }
 }
 
